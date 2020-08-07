@@ -1,0 +1,165 @@
+<div class="container-md">
+<div>
+  <span style="padding-right: 800px"></span>
+  <b> <a href="http://localhost:4200/login" >Home</a> </b>
+   <span class="space-away"></span>
+</div>
+<mat-toolbar-row>
+  <span style="padding-right: 300px"></span>
+  <span><strong class="font-weight-bold">{{'title.titleRegisterMessage' | translate}}</strong></span>
+  <span class="space-away"></span>
+ </mat-toolbar-row>
+ <div class="card-body">
+  <form class="form-horizontal" [formGroup]="registerForm"  #formDirective="ngForm" >
+      <span class="space-away"></span>
+      <div class="form-group row">
+                  <span style="padding-right: 300px"></span>
+                  <strong> {{'labels.First_Name'|translate}} </strong>
+                  <span class="required">*</span>
+                  <span style="padding-right: 50px"></span>
+                  <mat-form-field appearance="outline">
+                      <input matInput id="firstName" maxlength="20" formControlName="firstName" autocomplete="off">
+                      <mat-error *ngIf="registerForm.controls['firstName'].errors?.required">
+                        Please enter first Name
+                      </mat-error> 
+                      <mat-error *ngIf="registerForm.controls['firstName'].errors?.pattern">
+                        First Name not valid
+                    </mat-error> 
+                    <mat-error *ngIf="registerForm.controls['firstName'].errors?.validFname">
+                       First letter cannot be a number
+                    </mat-error> 
+                  </mat-form-field>
+       </div>
+       <div class="form-group row">
+                  <span style="padding-right: 300px"></span>
+                  <strong>{{'labels.Last_Name'|translate}}
+                  </strong>
+                  <span class="required">*</span>
+                  <span style="padding-right: 54px"></span>
+                  <mat-form-field appearance="outline">
+                      <input matInput id="lastName" maxlength="20" formControlName="lastName" autocomplete="off">
+                      <mat-error *ngIf="registerForm.controls['lastName'].errors?.required">
+                        Please enter Last Name
+                      </mat-error>
+                  </mat-form-field>
+              </div>
+              <div class="form-group row">
+                <span style="padding-right: 300px"></span>
+                <strong>{{'labels.DOB'|translate}}
+                </strong>
+                <span class="required">*</span>
+                <span style="padding-right: 47px"></span>
+                <mat-form-field appearance="outline">
+                    <input matInput id="DOB" maxlength="10" formControlName="dob" autocomplete="off">
+                    <mat-error *ngIf="registerForm.controls['dob'].errors?.required">
+                        Please enter DOB
+                    </mat-error>
+                    <mat-error *ngIf="registerForm.controls['dob'].errors?.validDob">
+                        DOB cannot be greater than current date
+                     </mat-error>
+                     <mat-error *ngIf="registerForm.controls['dob'].errors?.dateDOB">
+                        DOB should be DD/MM/YYYY format
+                     </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group row">
+              <span style="padding-right: 300px"></span>
+              <strong>{{'labels.Address'|translate}}
+              </strong>
+              <span class="required">*</span>
+              <span style="padding-right: 70px"></span>
+              <mat-form-field appearance="outline">
+           
+                  <input matInput id="address" maxlength="50" formControlName="address" autocomplete="off">
+                  <mat-error *ngIf="registerForm.controls['address'].errors?.required">
+                    Please enter address
+                  </mat-error>
+              </mat-form-field>
+          </div>
+          <div class="form-group row">
+            <span style="padding-right: 300px"></span>
+            <strong>{{'labels.Contact_No'|translate}}
+            </strong>
+            <span class="required">*</span>
+            <span style="padding-right: 53px"></span>
+            <mat-form-field appearance="outline">
+               
+                <input matInput id="contactNo" maxlength="10" formControlName="contactNo" autocomplete="off">
+                <mat-error *ngIf="registerForm.controls['contactNo'].errors?.required">
+                    Phone number is mandatory 
+                </mat-error>
+                <mat-error *ngIf="registerForm.controls['contactNo'].errors?.pattern">
+                    ContactNo should be number
+                  </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group row">
+          <span style="padding-right: 300px"></span>
+          <strong>{{'labels.Email_Address'|translate}}
+          </strong>
+          <span class="required">*</span>
+          <span style="padding-right: 43px"></span>
+          <mat-form-field appearance="outline">
+          
+              <input matInput id="emailAddress" maxlength="20" formControlName="emailAddress" autocomplete="off">
+              <mat-error *ngIf="registerForm.controls['emailAddress'].errors?.required">
+                Please enter email address
+              </mat-error>
+              <mat-error *ngIf="registerForm.controls['emailAddress'].errors?.validEmail">
+                Email should have underscore
+             </mat-error>
+             <mat-error *ngIf="registerForm.controls['emailAddress'].errors?.email">
+               Please enter valid email address
+            </mat-error>
+          </mat-form-field>
+      </div>
+      <div class="form-group row">
+        <span style="padding-right: 300px"></span>
+        <strong>{{'labels.Register_Password'|translate}}
+        </strong>
+        <span class="required">*</span>
+        <span style="padding-right: 65px"></span>
+        <mat-form-field appearance="outline">
+            <input type="password" matInput id="password" maxlength="20" formControlName="password" autocomplete="off">
+            <mat-error *ngIf="registerForm.controls['password'].errors?.required">
+                Please enter password
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="form-group row">
+      <span style="padding-right: 300px"></span>
+      <strong>{{'labels.Confirm_Password'|translate}}
+      </strong>
+      <span class="required">*</span>
+      <span style="padding-right: 18px"></span>
+      <mat-form-field appearance="outline">
+      
+          <input type="password" matInput id="confirmPassword" maxlength="20" formControlName="confirmPassword" autocomplete="off">
+          <mat-error *ngIf="registerForm.controls['confirmPassword'].errors?.required">
+            Please confirm password
+          </mat-error>
+          <mat-error *ngIf="registerForm.controls['confirmPassword'].errors?.mustMatch">Password should be same as Confirm password<
+          </mat-error>  
+      </mat-form-field>
+  </div>
+  <div class="form-group row">
+    <span style="padding-left: 280px"></span>
+    <button type="!isResetPending" class="Btn_Primary ml-4" mat-raised-button
+        matTooltip="Reset" (click)="onReset()"> {{'button.Reset'|translate}}</button>
+    <span style="padding-left: 35px"></span>
+    <button type="!isSubmitPending" class="Btn_Primary ml-4" mat-raised-button
+         matTooltip="Submit" (click) = "onSubmit()"> {{'button.Submit'|translate}}</button>
+</div>
+<mat-error *ngIf="registerForm.errors?.mismatch">Passwords must match
+</mat-error>     
+</form>
+<div>        
+<span class="space-away"></span>    
+    <p>  
+        <span style="padding-right: 420px"></span>     
+    <span *ngIf="infoMessage.length > 0">{{infoMessage}}</span>
+    </p>
+</div>
+
+</div>
+</div>

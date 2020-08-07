@@ -1,0 +1,22 @@
+<mat-toolbar class="errorMsg-panel" *ngIf="errorMessage" style="width: auto">
+  <mat-toolbar-row [ngClass]="{'message-success':type ==='success',
+  'message-error':type === 'error',
+  'message-warning':type === 'warning'}">
+    <span class="fa fa-times-circle fa-lg" style="cursor: pointer;" (click)="messageService.hideMessage()"
+      matTooltip="Close"></span>
+    <div class="message-banner col-md-12">
+      <span>
+        <div *ngIf='errorMessage.constructor === Array;else stringMessage'>
+          <ul>
+            <li *ngFor="let message of errorMessage">
+              {{message}}
+            </li>
+          </ul>
+        </div>
+        <ng-template #stringMessage>
+          {{errorMessage}}
+        </ng-template>
+      </span>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

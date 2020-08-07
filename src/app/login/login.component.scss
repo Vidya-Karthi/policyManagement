@@ -1,0 +1,45 @@
+.referenceTextBox {
+  // border: 1px solid #c8c8c8;
+  height: 32px;
+  margin-right: 10px;
+}
+.vinTextBox {
+  width: 250px;
+  padding-left: 2px;
+}
+
+.block-display {
+  display: block;
+}
+
+.pack {
+  margin-left: -7px;
+}
+
+.buttons-panel {
+  margin: 10px;
+  width: auto;
+}
+.iplus_Btn_Primary {
+    font-size: 12px;
+  }
+ .mat-card-actions {
+    padding: 0px 0;
+}
+.mat-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+    
+.mat-radio-button {  
+      color: white;
+    }
+  
+  }
+.font-size{
+  font-size: 12px;
+}  
+::ng-deep .mat-radio-outer-circle  {
+  background: #fff !important;
+}
+

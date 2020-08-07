@@ -1,0 +1,29 @@
+<div class="container-md">
+<div>
+   <span style="padding-right: 900px"></span>
+   <a href="http://localhost:4200/logout/{{userId}}" >Logout</a>
+   <span class="space-away"></span>
+   <div class="col-xs-6 pack">
+    <span style="padding-right: 10px"></span>
+    <span style="padding-right: 10px"> Welcome </span>
+  <span style="padding-right: 500px">{{userId}}</span> 
+   </div>
+   <span style="padding-right: 10px"></span>
+   <h3>Available Policies</h3>
+</div>
+<div class="col-md-8" style="padding: 0px;" id="policyDetailGridcontainer" class="gridcontainer">
+<ag-grid-angular #agGrid id="policyGrid" style="width: 620px; height: 350px;" class="ag-theme-material"
+          [gridOptions]="gridOptions" [columnDefs]="policyColumnDefs" [rowData]="policyRowData"
+></ag-grid-angular>
+<br>
+</div>
+<span style="padding-right: 10px">{{userId}}</span> 
+<span style="padding-right: 500px"> Policy Details </span>
+<br>
+<br>
+<div class="col-md-8" style="padding: 0px;" id="userPolicyDetailGridcontainer" class="gridcontainer">
+  <ag-grid-angular #agGrid id="userPolicyGrid" style="width: 1000px; height: 200px;" class="ag-theme-material"
+            [gridOptions]="gridOptions" [columnDefs]="userPolicyColumnDefs" [rowData]="userPolicyRowData"
+  ></ag-grid-angular>
+  </div>
+</div>

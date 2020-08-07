@@ -1,0 +1,64 @@
+<div class="container-md">
+        <nav class='navbar navbar-expand-md navbar-dark bg-primary'>
+        <ul class='nav nav-pills'>
+            <span style="padding-right: 500px"></span>
+          <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/register']">
+            <span class="font-size-title">{{'title.Register'|translate}}</span>
+        </a></li>
+          <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/aboutUs']">
+            <span class="font-size-title">{{'title.About_Us'|translate}}</span></a></li>
+          <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/contactUs']">
+            <span class="font-size-title">{{'title.Contact_Us'|translate}}</span></a></li>  
+            <span style="padding-right: 300px"></span>
+        </ul>
+    </nav>
+    <div class="row ml-1">
+        <span style="padding-right: 510px"></span>
+        <div class="col-6 my-1"><strong>{{'title.New_User'|translate}}</strong></div>
+    </div>
+    <span class="space-away"></span>
+    <mat-toolbar-row>
+        <span style="padding-right: 280px"></span>
+        <span><strong class="font-size-title">{{'title.titleMessage' | translate}}</strong></span>
+        <span class="space-away"></span>
+    </mat-toolbar-row>
+    <div class="card-body">
+        <form class="form-horizontal" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <span class="space-away"></span>
+                     <div class="form-group row">
+                        <span style="padding-right: 270px"></span>
+                        <label for="userId" class="col-md-2 col-form-label">User ID</label>
+                        <mat-form-field appearance="outline">
+                            <input type="text" matInput id="userId" maxlength="10" formControlName="userId" autocomplete="off">
+                             <mat-error *ngIf="loginForm.controls['userId'].errors?.required">
+                               {{'errormsg.UserIdMandatory'|translate}}
+                            </mat-error> 
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group row">
+                        <span style="padding-right: 270px"></span>
+                        <label for="password" class="col-md-2 col-form-label">Password</label>
+                        <mat-form-field appearance="outline">
+                            <input type="password"  matInput id="password" maxlength="20" formControlName="password" autocomplete="off">
+                            <mat-error *ngIf="loginForm.controls['password'].errors?.required">
+                                {{'errormsg.PasswordMandatory'|translate}}
+                            </mat-error>
+                            <mat-error  *ngIf="loginForm.controls['password'].errors?.minlength">Password must be at least 6 characters
+                            </mat-error>
+                            </mat-form-field>
+                    </div>
+                    <div class="form-group row">
+                        <span style="padding-left: 480px"></span>
+                        <button type="!isSubmitPending" class="Btn_Primary ml-4" mat-raised-button
+                            matTooltip="Submit"> {{'button.Login'|translate}}</button>
+                    </div>  
+                </form> 
+                    <div>        
+                        <span class="space-away"></span>    
+                        <p>  
+                            <span style="padding-right: 420px"></span>     
+                        <span *ngIf="infoMessage.length > 0">{{infoMessage}}</span>
+                        </p>
+                    </div>
+    </div>
+    </div>

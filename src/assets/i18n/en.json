@@ -1,0 +1,49 @@
+{
+    "button": {
+        "Cancel": "Cancel",
+        "Delete": "Delete",
+        "Logout": "Logout",
+        "Reset": "Reset",
+        "Save": "Save",
+        "Login": "Login",
+        "Submit": "Submit",
+        "Search": "Search",
+        "Register": "Register",
+        "About_Us": "About Us",
+        "Contact_Us": "Contact Us"
+    },
+    "title": {
+        "Page_Title": "Policy Management System",
+        "Register": "Register",
+        "About_Us": "About Us",
+        "Contact_Us": "Contact Us",
+        "New_User": "New User?",
+        "VIN_Summary": "VIN Summary",
+        "titleMessage": "Welcome to the site",
+        "titleRegisterMessage": "Customer Information"
+    },
+    "labels": {
+        "First_Name": "First Name",
+        "Last_Name" : "Last Name",
+        "DOB": "Date Of Birth",
+        "Address": "Address",
+        "Contact_No": "Contact No.",
+        "Email_Address": "Email Address",
+        "Register_Password": "Password",
+        "Confirm_Password": "Confirm Password",
+        "User_Id": "User ID",
+        "Password": "Password"
+    },
+    "errormsg": {
+        "Date_Error": "End date cannot be less than the start date.",
+        "Mandatory": "This field is mandatory.",
+        "UserIdMandatory": "Please enter valid UserId",
+        "PasswordMandatory" :"Please enter Password",
+        "FirstName": "First Name should be alphanumeric",
+        "Invalid": "Invalid",
+        "E-mail_validation": "Please enter valid Email Address.",
+        "Phone_No_Validation": "Please enter valid Phone Number."
+    },
+    "hyperLinks": {},
+    "messages": {}
+}

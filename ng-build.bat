@@ -1,0 +1,1 @@
+set PATH=C:\Program Files\nodejs;C:\Users\s-bfserver-p\AppData\Roaming\npm
